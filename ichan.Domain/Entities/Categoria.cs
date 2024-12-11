@@ -4,8 +4,9 @@ namespace ichan.Domain.Entities
 {
     public class Categoria : BaseEntity<int>
     {
-        public Categoria() { }
-        public Categoria(int id, string nome, string? descricao) 
+        public Categor
+            ia() { }
+        public Categoria(int id, string nome, string? descricao)
         {
             Id = id;
             Nome = nome;
@@ -14,6 +15,6 @@ namespace ichan.Domain.Entities
 
         public string Nome { get; set; }
         public string? Descricao { get; set; }
-        
+        public List<CategoriaDaComunidade> categoriaDaComunidades { get; set; } = [];
     }
 }

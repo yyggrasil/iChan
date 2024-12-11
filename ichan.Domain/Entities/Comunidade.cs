@@ -1,16 +1,11 @@
 ﻿using ichan.Domain.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ichan.Domain.Entities
 {
     public class Comunidade : BaseEntity<int>
     {
         public Comunidade() { }
-        public Comunidade(int id, string nome, string? descricao, DateTime dataCriacao) 
+        public Comunidade(int id, string nome, string? descricao, DateTime dataCriacao)
         {
             Id = id;
             Nome = nome;
@@ -18,9 +13,16 @@ namespace ichan.Domain.Entities
             DataCriacao = dataCriacao;
         }
 
+        #region Propriedades
         public string Nome { get; set; }
         public string? Descricao { get; set; }
         public DateTime DataCriacao { get; set; }
+        #endregion
 
+        #region relacionamentos
+        public List<Segue> seguidores { get; set; } = [];
+        public List<Post> posts { get; set; } = [];
+        public List<CategoriaDaComunidade> categorias { get; set; } = [];
+        #endregion
     }
 }

@@ -1,9 +1,4 @@
 ﻿using ichan.Domain.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ichan.Domain.Entities
 {
@@ -19,9 +14,26 @@ namespace ichan.Domain.Entities
             Descricao = descricao;
         }
 
+        #region Parâmetros
+
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Nome { get; set; }
         public string? Descricao { get; set; }
+
+        #endregion
+
+        #region Relacionamentos
+
+        public List<Amizade> amizades { get; } = [];
+
+        public List<Post> posts { get; set; } = [];
+
+        public List<Segue> seguir { get; set; } = [];
+        public List<Comentario> comentarios { get; set; } = [];
+
+
+
+        #endregion
     }
 }

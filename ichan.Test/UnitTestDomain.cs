@@ -7,11 +7,24 @@ namespace ichan.Test
     [TestClass]
     public sealed class UnitTestDomain
     {
+        public void TestUsuario()
+        {
+            Usuario usuario = new Usuario(1, "kaueleivas0@gmail.com", "1234Kaue", "kaue", null);
+
+            Debug.WriteLine(JsonSerializer.Serialize(usuario));
+
+            Assert.AreEqual(usuario.Nome, "kaue");
+            Assert.AreEqual(usuario.Senha, "1234Kaue");
+            Assert.AreEqual(usuario.Descricao, null);
+            Assert.AreEqual(usuario.Email, "kaueleivas0@gmail.com");
+        }
 
         [TestMethod]
         public void TestAmizade()
         {
-            Amizade amizade = new Amizade(1, DateTime.Today);
+            Usuario usuario1 = new Usuario(1, "kaueleivas0@gmail.com", "1234Kaue", "kaue", null);
+            Usuario usuario2 = new Usuario(2, "arroba@gmail.com", "4321", "nao sei", null);
+            Amizade amizade = new Amizade(1, DateTime.Today, usuario1, usuario2);
 
             Debug.WriteLine(JsonSerializer.Serialize(amizade));
 
@@ -32,7 +45,9 @@ namespace ichan.Test
         [TestMethod]
         public void TestCategoriaDaComunidade()
         {
-            CategoriaDaComunidade categoriaDaComunidade = new CategoriaDaComunidade(1);
+            Categoria categoria = new Categoria();
+            Comunidade comunidade = new Comunidade();
+            CategoriaDaComunidade categoriaDaComunidade = new CategoriaDaComunidade(1, categoria, comunidade);
             
             Debug.WriteLine(JsonSerializer.Serialize(categoriaDaComunidade));
 
@@ -42,7 +57,9 @@ namespace ichan.Test
         [TestMethod]
         public void TestComentario()
         {
-            Comentario comentario = new Comentario(1, "so um texto", DateTime.Today);
+            Usuario usuario = new Usuario();
+            Post post = new Post();
+            Comentario comentario = new Comentario(1, "so um texto", DateTime.Today, usuario, post);
 
             Debug.WriteLine(JsonSerializer.Serialize(comentario));
 
@@ -67,7 +84,8 @@ namespace ichan.Test
         [TestMethod]
         public void TestParticipa()
         {
-            Participa participa = new Participa(1, DateTime.Today);
+            Usuario usuario = new Usuario();
+            Segue participa = new Segue(1, DateTime.Today, usuario);
 
             Debug.WriteLine(JsonSerializer.Serialize(participa));
 
@@ -78,7 +96,10 @@ namespace ichan.Test
         [TestMethod]
         public void TestPosts()
         {
-            Posts posts = new Posts(1, "Jogo ruim", "jogo é pay to win", DateTime.Today);
+            Comunidade comunidade = new Comunidade();
+            Usuario usuario = new Usuario();
+            Post posts = new Post(1, "Jogo ruim", "jogo é pay to win", DateTime.Today,
+                comunidade, usuario);
 
             Debug.WriteLine(JsonSerializer.Serialize(posts));
 
@@ -86,19 +107,6 @@ namespace ichan.Test
             Assert.AreEqual(posts.Descricao, "jogo é pay to win");
             Assert.AreEqual(posts.DataPost, DateTime.Today);
 
-        }
-
-        [TestMethod]
-        public void TestUsuario()
-        {
-            Usuario usuario = new Usuario(1, "kaueleivas0@gmail.com", "1234Kaue", "kaue", null);
-
-            Debug.WriteLine(JsonSerializer.Serialize(usuario));
-
-            Assert.AreEqual(usuario.Nome, "kaue");
-            Assert.AreEqual(usuario.Senha, "1234Kaue");
-            Assert.AreEqual(usuario.Descricao, null);
-            Assert.AreEqual(usuario.Email, "kaueleivas0@gmail.com");
         }
     }
 }

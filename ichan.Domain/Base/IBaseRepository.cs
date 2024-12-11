@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ichan.Domain.Base
 {
-    internal interface IBaseRepository<TEntity> 
+    public interface IBaseRepository<TEntity> 
         where TEntity : IBaseEntity
     {
         void ClearChangeTracker();
