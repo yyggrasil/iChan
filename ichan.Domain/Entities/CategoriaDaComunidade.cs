@@ -8,11 +8,11 @@ namespace ichan.Domain.Entities
         public CategoriaDaComunidade(int id, Categoria categoria, Comunidade comunidade)
         {
             Id = id;
-            this.categoria = categoria;
-            this.comunidade = comunidade;
+            this.Categoria = categoria;
+            this.Comunidade = comunidade;
         }
 
-        public Categoria categoria { get; set; }
-        public Comunidade comunidade { get; set; }
+        public virtual Categoria Categoria { get; set; }
+        public virtual Comunidade Comunidade { get; set; }
     }
 }

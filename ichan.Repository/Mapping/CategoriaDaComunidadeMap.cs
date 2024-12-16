@@ -12,8 +12,8 @@ namespace ichan.Repository.Mapping
 
             builder.HasKey(c => c.Id);
 
-            builder.HasOne(c => c.categoria);
-            builder.HasOne(c => c.comunidade);
+            builder.HasOne(c => c.Categoria);
+            builder.HasOne(c => c.Comunidade);
         }
     }
 }

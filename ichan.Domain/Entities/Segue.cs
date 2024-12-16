@@ -14,7 +14,7 @@ namespace ichan.Domain.Entities
         }
 
         public DateTime DataSeguida { get; set; }
-        public Usuario Usuario { get; set; }
-        public Comunidade Comunidade { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public virtual Comunidade Comunidade { get; set; }
     }
 }

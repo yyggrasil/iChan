@@ -19,8 +19,8 @@ namespace ichan.Domain.Entities
         public string? Descricao { get; set; }
         public DateTime DataPost { get; set; }
 
-        public Comunidade Comunidade { get; set; }
-        public Usuario Usuario { get; set; }
-        public List<Comentario> Comentarios { get; set; } = [];
+        public virtual Comunidade Comunidade { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public virtual List<Comentario> Comentarios { get; set; } = [];
     }
 }

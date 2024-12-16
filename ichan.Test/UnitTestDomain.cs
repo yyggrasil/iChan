@@ -85,7 +85,8 @@ namespace ichan.Test
         public void TestParticipa()
         {
             Usuario usuario = new Usuario();
-            Segue participa = new Segue(1, DateTime.Today, usuario);
+            Comunidade comunidade = new Comunidade();
+            Segue participa = new Segue(1, DateTime.Today, usuario, comunidade);
 
             Debug.WriteLine(JsonSerializer.Serialize(participa));
 

@@ -30,7 +30,7 @@ namespace ichan.Repository.Mapping
                 .WithOne(x => x.Comunidade)
                 .OnDelete(DeleteBehavior.Cascade);
             builder.HasMany(x => x.categorias)
-                .WithOne(x => x.comunidade)
+                .WithOne(x => x.Comunidade)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

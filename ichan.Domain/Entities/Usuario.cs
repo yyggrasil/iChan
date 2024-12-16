@@ -25,12 +25,10 @@ namespace ichan.Domain.Entities
 
         #region Relacionamentos
 
-        public List<Amizade> amizades { get; } = [];
+        public virtual List<Post> posts { get; set; } = [];
 
-        public List<Post> posts { get; set; } = [];
-
-        public List<Segue> seguir { get; set; } = [];
-        public List<Comentario> comentarios { get; set; } = [];
+        public virtual List<Segue> seguir { get; set; } = [];
+        public virtual List<Comentario> comentarios { get; set; } = [];
 
 
 

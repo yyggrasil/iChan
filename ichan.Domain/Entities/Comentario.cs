@@ -16,7 +16,7 @@ namespace ichan.Domain.Entities
 
         public string Texto { get; set; }
         public DateTime DateComentario { get; set; }
-        public Usuario Usuario { get; set; }
-        public Post Post { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public virtual Post Post { get; set; }
     }
 }

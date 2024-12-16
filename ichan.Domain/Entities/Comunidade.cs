@@ -20,9 +20,9 @@ namespace ichan.Domain.Entities
         #endregion
 
         #region relacionamentos
-        public List<Segue> seguidores { get; set; } = [];
-        public List<Post> posts { get; set; } = [];
-        public List<CategoriaDaComunidade> categorias { get; set; } = [];
+        public virtual List<Segue> seguidores { get; set; } = [];
+        public virtual List<Post> posts { get; set; } = [];
+        public virtual List<CategoriaDaComunidade> categorias { get; set; } = [];
         #endregion
     }
 }
