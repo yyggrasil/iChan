@@ -1,5 +1,7 @@
 using ichan.App.Cadastros;
 using ichan.App.Infra;
+using ichan.App.Outros;
+using ichan.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
 
@@ -7,9 +9,26 @@ namespace ichan.App
 {
     public partial class FormPrincipal : MaterialForm
     {
+        public static Usuario usuario { get; set; }
         public FormPrincipal()
         {
             InitializeComponent();
+            CarregaLogin();
+        }
+        private void CarregaLogin()
+        {
+            var login = ConfigureDI.ServicesProvider!.GetService<Login>();
+            if (login != null && !login.IsDisposed)
+            {
+                if (login.ShowDialog() != DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    lblUsuario.Text = $"Usuário: {usuario.Nome}";
+                }
+            }
         }
 
         private void comentarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,7 +63,7 @@ namespace ichan.App
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExibeFormulario<CadastroComentario>();
+            ExibeFormulario<CadastroUsuario>();
         }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)

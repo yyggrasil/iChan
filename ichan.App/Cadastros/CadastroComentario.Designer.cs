@@ -80,7 +80,7 @@
             txtId.Name = "txtId";
             txtId.PasswordChar = '\0';
             txtId.PrefixSuffixText = null;
-            txtId.ReadOnly = false;
+            txtId.ReadOnly = true;
             txtId.RightToLeft = RightToLeft.No;
             txtId.SelectedText = "";
             txtId.SelectionLength = 0;
@@ -193,6 +193,7 @@
             cboUsuario.DropDownHeight = 174;
             cboUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
             cboUsuario.DropDownWidth = 121;
+            cboUsuario.Enabled = false;
             cboUsuario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboUsuario.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboUsuario.FormattingEnabled = true;

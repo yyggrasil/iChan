@@ -13,7 +13,7 @@ namespace ichan.App.Cadastros
         private IBaseService<Post> _postService;
         private IBaseService<Usuario> _usuarioService;
         private IBaseService<Comunidade> _comunidadeService;
-        public CadastroPost(IBaseService<Post> postService,
+        public CadastroPost(    IBaseService<Post> postService,
                                 IBaseService<Usuario> usuarioService,
                                 IBaseService<Comunidade> comunidadeService)
         {
@@ -31,12 +31,16 @@ namespace ichan.App.Cadastros
 
         private void PreencheObjeto(Post post)
         {
-            post.Conteudo = txtConteudo.Text;
+            post.Texto = txtConteudo.Text;
             post.Titulo = txtTitulo.Text;
             if (int.TryParse(cboComunidade.SelectedValue.ToString(), out var idComunidade))
             {
                 var comunidade = _comunidadeService.GetById<Comunidade>(idComunidade);
                 post.Comunidade = comunidade;
+            }
+            if (DateTime.TryParse(txtData.Text, out var dataCompra))
+            {
+                post.DataPost = dataCompra;
             }
 
             if (int.TryParse(cboUsuario.SelectedValue.ToString(), out var idUsuario))
@@ -82,6 +86,7 @@ namespace ichan.App.Cadastros
             {
                 MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
         protected override void CarregaGrid()
         {
@@ -107,7 +112,7 @@ namespace ichan.App.Cadastros
             cboComunidade.ValueMember = "Id";
             cboComunidade.DisplayMember = "Nome";
 
-            cboUsuario.DataSource = _comunidadeService.Get<UsuarioModel>().ToList();
+            cboUsuario.DataSource = _usuarioService.Get<UsuarioModel>().ToList();
             cboUsuario.ValueMember = "Id";
             cboUsuario.DisplayMember = "Nome";
         }
@@ -115,6 +120,7 @@ namespace ichan.App.Cadastros
         {
             base.Novo();
             txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            CarregaCombo();
         }
     }
 }

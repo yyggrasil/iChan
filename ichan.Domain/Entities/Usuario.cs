@@ -11,7 +11,7 @@ namespace ichan.Domain.Entities
             Email = email;
             Senha = senha;
             Nome = nome;
-            Descricao = descricao;
+            Bios = descricao;
         }
 
         #region Parâmetros
@@ -19,7 +19,7 @@ namespace ichan.Domain.Entities
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Nome { get; set; }
-        public string? Descricao { get; set; }
+        public string? Bios { get; set; }
 
         #endregion
 

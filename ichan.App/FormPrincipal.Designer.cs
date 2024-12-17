@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             contextMenuStrip1 = new ContextMenuStrip(components);
             menuStrip = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
@@ -39,7 +40,10 @@
             postToolStripMenuItem = new ToolStripMenuItem();
             seguidorToolStripMenuItem = new ToolStripMenuItem();
             usuárioToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            lblUsuario = new ToolStripStatusLabel();
             menuStrip.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -114,11 +118,29 @@
             usuárioToolStripMenuItem.Text = "Usuário";
             usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lblUsuario });
+            statusStrip1.Location = new Point(3, 421);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(794, 26);
+            statusStrip1.TabIndex = 3;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // lblUsuario
+            // 
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(66, 20);
+            lblUsuario.Text = "Usuario: ";
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(statusStrip1);
             Controls.Add(menuStrip);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip;
@@ -129,6 +151,8 @@
             FormClosing += FormPrincipal_FormClosing;
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,5 +169,7 @@
         private ToolStripMenuItem postToolStripMenuItem;
         private ToolStripMenuItem seguidorToolStripMenuItem;
         private ToolStripMenuItem usuárioToolStripMenuItem;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel lblUsuario;
     }
 }

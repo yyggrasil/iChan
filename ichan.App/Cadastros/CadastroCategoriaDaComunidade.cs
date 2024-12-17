@@ -70,7 +70,7 @@ namespace ichan.App.Cadastros
                 {
                     var categoriaDaComunidade = new CategoriaDaComunidade();
                     PreencheObjeto(categoriaDaComunidade);
-                    categoriaDaComunidade = _catDaComunService.Add<CategoriaDaComunidade, CategoriaDaComunidade, CategoriaDaComunidadeValidator>(categoriaDaComunidade);
+                    categoriaDaComunidade = _catDaComunService.Add<CategoriaDaComunidade, CategoriaDaComunidade, CategoriaDaComunidadeValidator>((CategoriaDaComunidade)categoriaDaComunidade);
                 }
 
                 tabControlCadastro.SelectedIndex = 1;

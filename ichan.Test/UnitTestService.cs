@@ -42,7 +42,7 @@ namespace ichan.Test
             });
 
             #region Repositórios
-            services.AddScoped<IBaseRepository<Usuario>, BaseRepository<Usuario>>();
+            services.AddScoped<IBaseRepository<CategoriaDaComunidade>, BaseRepository<CategoriaDaComunidade>>();
             services.AddScoped<IBaseRepository<Amizade>, BaseRepository<Amizade>>();
             services.AddScoped<IBaseRepository<CategoriaDaComunidade>, BaseRepository<CategoriaDaComunidade>>();
             services.AddScoped<IBaseRepository<Categoria>, BaseRepository<Categoria>>();
@@ -52,7 +52,7 @@ namespace ichan.Test
             #endregion
 
             #region Serviços
-            services.AddScoped<IBaseService<Usuario>, BaseService<Usuario>>();
+            services.AddScoped<IBaseService<CategoriaDaComunidade>, BaseService<CategoriaDaComunidade>>();
             services.AddScoped<IBaseService<Amizade>, BaseService<Amizade>>();
             services.AddScoped<IBaseService<CategoriaDaComunidade>, BaseService<CategoriaDaComunidade>>();
             services.AddScoped<IBaseService<Categoria>, BaseService<Categoria>>();
@@ -65,7 +65,7 @@ namespace ichan.Test
 
             services.AddSingleton(new MapperConfiguration(config =>
             {
-                config.CreateMap<Usuario, Usuario>();
+                config.CreateMap<CategoriaDaComunidade, CategoriaDaComunidade>();
             }).CreateMapper());
             services.AddSingleton(new MapperConfiguration(config =>
             {
@@ -102,16 +102,16 @@ namespace ichan.Test
         public void TestInsertUsuario()
         {
             var sp = ConfigureServices();
-            var usuarioService = sp.GetService<IBaseService<Usuario>>();
+            var usuarioService = sp.GetService<IBaseService<CategoriaDaComunidade>>();
             var usuario = new Usuario
             {
                 Nome = "Kaue",
                 Email = "kaueleivas0@gmail.com",
                 Senha = "123Rt@#jdjfhfh!",
-                Descricao = "fundador do ichan"
+                Bios = "fundador do ichan"
             };
 
-            var result = usuarioService.Add<Usuario, Usuario, UsuarioValidator>(usuario);
+            var result = usuarioService.Add<CategoriaDaComunidade, CategoriaDaComunidade, UsuarioValidator>((CategoriaDaComunidade)usuario);
             Console.Write(JsonSerializer.Serialize(result));
         }
     }

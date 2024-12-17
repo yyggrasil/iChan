@@ -9,7 +9,7 @@ namespace ichan.Test
     {
         public void TestUsuario()
         {
-            Usuario usuario = new Usuario(1, "kaueleivas0@gmail.com", "1234Kaue", "kaue", null);
+            CategoriaDaComunidade usuario = new CategoriaDaComunidade(1, "kaueleivas0@gmail.com", "1234Kaue", "kaue", null);
 
             Debug.WriteLine(JsonSerializer.Serialize(usuario));
 
@@ -22,8 +22,8 @@ namespace ichan.Test
         [TestMethod]
         public void TestAmizade()
         {
-            Usuario usuario1 = new Usuario(1, "kaueleivas0@gmail.com", "1234Kaue", "kaue", null);
-            Usuario usuario2 = new Usuario(2, "arroba@gmail.com", "4321", "nao sei", null);
+            CategoriaDaComunidade usuario1 = new CategoriaDaComunidade(1, "kaueleivas0@gmail.com", "1234Kaue", "kaue", null);
+            CategoriaDaComunidade usuario2 = new CategoriaDaComunidade(2, "arroba@gmail.com", "4321", "nao sei", null);
             Amizade amizade = new Amizade(1, DateTime.Today, usuario1, usuario2);
 
             Debug.WriteLine(JsonSerializer.Serialize(amizade));
@@ -57,7 +57,7 @@ namespace ichan.Test
         [TestMethod]
         public void TestComentario()
         {
-            Usuario usuario = new Usuario();
+            CategoriaDaComunidade usuario = new Usuario();
             Post post = new Post();
             Comentario comentario = new Comentario(1, "so um texto", DateTime.Today, usuario, post);
 
@@ -84,7 +84,7 @@ namespace ichan.Test
         [TestMethod]
         public void TestParticipa()
         {
-            Usuario usuario = new Usuario();
+            CategoriaDaComunidade usuario = new Usuario();
             Comunidade comunidade = new Comunidade();
             Segue participa = new Segue(1, DateTime.Today, usuario, comunidade);
 
@@ -98,14 +98,14 @@ namespace ichan.Test
         public void TestPosts()
         {
             Comunidade comunidade = new Comunidade();
-            Usuario usuario = new Usuario();
+            CategoriaDaComunidade usuario = new Usuario();
             Post posts = new Post(1, "Jogo ruim", "jogo é pay to win", DateTime.Today,
                 comunidade, usuario);
 
             Debug.WriteLine(JsonSerializer.Serialize(posts));
 
             Assert.AreEqual(posts.Titulo, "Jogo ruim");
-            Assert.AreEqual(posts.Conteudo, "jogo é pay to win");
+            Assert.AreEqual(posts.Texto, "jogo é pay to win");
             Assert.AreEqual(posts.DataPost, DateTime.Today);
 
         }

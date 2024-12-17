@@ -76,10 +76,12 @@ namespace ichan.App.Cadastros
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
+            txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtData.Text = DateTime.TryParse(linha?.Cells["DataCriacao"].Value.ToString(), out var dataC)
                ? dataC.ToString("g")
                : "";
             txtDescricao.Text = linha?.Cells["Descricao"].Value.ToString();
+
 
         }
         protected override void Novo()

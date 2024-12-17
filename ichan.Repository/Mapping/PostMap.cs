@@ -16,13 +16,12 @@ namespace ichan.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(45)");
 
-            builder.Property(x => x.Conteudo)
+            builder.Property(x => x.Texto)
                 .HasColumnType("varchar(255)");
 
             builder.Property(x => x.DataPost)
                 .IsRequired()
                 .HasColumnType("DATETIME");
-
             builder.HasOne(x => x.Comunidade);
             builder.HasOne(x => x.Usuario);
             builder.HasMany(x => x.Comentarios)

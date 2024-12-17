@@ -8,6 +8,7 @@ using ichan.Domain.Entities;
 using ichan.Repository.Repository;
 using ichan.App.Cadastros;
 using ichan.App.Models;
+using ichan.App.Outros;
 
 namespace ichan.App.Infra
 {
@@ -63,6 +64,7 @@ namespace ichan.App.Infra
             Services.AddTransient<CadastroPost, CadastroPost>();
             Services.AddTransient<CadastroSegue, CadastroSegue>();
             Services.AddTransient<CadastroUsuario, CadastroUsuario>();
+            Services.AddTransient<Login, Login>();
             #endregion
 
             #region mapping
@@ -73,6 +75,8 @@ namespace ichan.App.Infra
                 config.CreateMap<Categoria, CategoriaModel>();
                 config.CreateMap<Comunidade, ComunidadeModel>();
                 config.CreateMap<Post, PostModel>()
+                    .ForMember(d => d.IdComunidade, d => d.MapFrom(x => x.Comunidade!.Id))
+                    .ForMember(d => d.Comunidade, d => d.MapFrom(x => x.Comunidade!.Nome))
                     .ForMember(d=>d.IdUsuario, d=> d.MapFrom(x => x.Usuario!.Id))
                     .ForMember(d=>d.Usuario, d => d.MapFrom(x => x.Usuario!.Nome));
                 config.CreateMap<CategoriaDaComunidade, CategoriaDaComunidadeModel>()

@@ -64,7 +64,7 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
-            txtId.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
@@ -74,7 +74,7 @@
             txtId.Name = "txtId";
             txtId.PasswordChar = '\0';
             txtId.PrefixSuffixText = null;
-            txtId.ReadOnly = false;
+            txtId.ReadOnly = true;
             txtId.RightToLeft = RightToLeft.No;
             txtId.SelectedText = "";
             txtId.SelectionLength = 0;

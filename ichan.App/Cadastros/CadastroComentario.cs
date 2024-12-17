@@ -26,6 +26,7 @@ namespace ichan.App.Cadastros
             InitializeComponent();
 
             CarregaCombo();
+            Novo();
         }
         private void PreencheObjeto(Comentario comentario)
         {
@@ -111,8 +112,15 @@ namespace ichan.App.Cadastros
             cboUsuario.DataSource = _usuarioService.Get<UsuarioModel>().ToList();
 
             cboPost.ValueMember = "Id";
-            cboPost.DisplayMember = "Nome";
+            cboPost.DisplayMember = "Titulo";
             cboPost.DataSource = _postService.Get<PostModel>().ToList();
+        }
+        protected override void Novo()
+        {
+            base.Novo();
+            CarregaCombo();
+            txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            cboUsuario.SelectedValue = FormPrincipal.usuario.Id;
         }
     }
 }

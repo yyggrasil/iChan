@@ -74,7 +74,7 @@
             txtId.Name = "txtId";
             txtId.PasswordChar = '\0';
             txtId.PrefixSuffixText = null;
-            txtId.ReadOnly = false;
+            txtId.ReadOnly = true;
             txtId.RightToLeft = RightToLeft.No;
             txtId.SelectedText = "";
             txtId.SelectionLength = 0;
@@ -99,7 +99,7 @@
             cboComunidade.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboComunidade.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboComunidade.FormattingEnabled = true;
-            cboComunidade.Hint = "Categoria";
+            cboComunidade.Hint = "Comunidade";
             cboComunidade.IntegralHeight = false;
             cboComunidade.ItemHeight = 43;
             cboComunidade.Location = new Point(66, 6);

@@ -73,7 +73,7 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
-            txtId.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
@@ -83,7 +83,7 @@
             txtId.Name = "txtId";
             txtId.PasswordChar = '\0';
             txtId.PrefixSuffixText = null;
-            txtId.ReadOnly = false;
+            txtId.ReadOnly = true;
             txtId.RightToLeft = RightToLeft.No;
             txtId.SelectedText = "";
             txtId.SelectionLength = 0;
@@ -105,7 +105,7 @@
             cboUsuario.DropDownHeight = 174;
             cboUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
             cboUsuario.DropDownWidth = 121;
-            cboUsuario.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboUsuario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboUsuario.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboUsuario.FormattingEnabled = true;
             cboUsuario.Hint = "Usuário";
@@ -128,7 +128,7 @@
             cboComunidade.DropDownHeight = 174;
             cboComunidade.DropDownStyle = ComboBoxStyle.DropDownList;
             cboComunidade.DropDownWidth = 121;
-            cboComunidade.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboComunidade.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboComunidade.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboComunidade.FormattingEnabled = true;
             cboComunidade.Hint = "Comunidade";
@@ -151,9 +151,10 @@
             txtData.BeepOnError = false;
             txtData.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
             txtData.Depth = 0;
-            txtData.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtData.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtData.HidePromptOnLeave = false;
             txtData.HideSelection = true;
+            txtData.Hint = "Data Criação";
             txtData.InsertKeyMode = InsertKeyMode.Default;
             txtData.LeadingIcon = null;
             txtData.Location = new Point(538, 60);
@@ -192,7 +193,7 @@
             txtTitulo.BackgroundImageLayout = ImageLayout.None;
             txtTitulo.CharacterCasing = CharacterCasing.Normal;
             txtTitulo.Depth = 0;
-            txtTitulo.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTitulo.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtTitulo.HideSelection = true;
             txtTitulo.Hint = "Titulo";
             txtTitulo.LeadingIcon = null;

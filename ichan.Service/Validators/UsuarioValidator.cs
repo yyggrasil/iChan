@@ -18,13 +18,13 @@ namespace ichan.Service.Validators
 
             RuleFor(u => u.Senha)
                 .NotEmpty().WithMessage("A senha é obrigatória.")
-                .MinimumLength(6).WithMessage("A senha deve ter pelo menos 6 caracteres.");
+                .MinimumLength(4).WithMessage("A senha deve ter pelo menos 4 caracteres.");
 
             RuleFor(u => u.Nome)
                 .NotEmpty().WithMessage("O nome é obrigatório.")
                 .MaximumLength(45).WithMessage("O nome pode ter no máximo 45 caracteres.");
 
-            RuleFor(u => u.Descricao)
+            RuleFor(u => u.Bios)
                 .MaximumLength(255).WithMessage("A descrição pode ter no máximo 255 caracteres.");
         }
 

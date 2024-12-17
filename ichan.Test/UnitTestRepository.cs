@@ -17,7 +17,7 @@ namespace ichan.Test
             public DbSet<Comunidade> Comunidades { get; set; }
             public DbSet<Post> Posts { get; set; }
             public DbSet<Segue> Seguidores { get; set; }
-            public DbSet<Usuario> Usuarios { get; set; }
+            public DbSet<CategoriaDaComunidade> Usuarios { get; set; }
 
             public MyDbContext()
             {
@@ -50,7 +50,7 @@ namespace ichan.Test
                     Email = "kaueleivas0@gmail.com",
                     Senha = "123Kaue",
                     Nome = "kaue leivas",
-                    Descricao = "dono do forum"
+                    Bios = "dono do forum"
                 };
                 db.Usuarios.Add(usuario);
 
@@ -59,7 +59,7 @@ namespace ichan.Test
                     Email = "aroba@gmail.com",
                     Senha = "123",
                     Nome = "tudo certo",
-                    Descricao = "escravo"
+                    Bios = "escravo"
                 };
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
@@ -138,7 +138,7 @@ namespace ichan.Test
                 var categoria = db.Categorias.FirstOrDefault(u => u.Id == 1);
                 var comunidade = db.Comunidades.FirstOrDefault(u => u.Id == 1);
 
-                var categoriaDaComunidade = new CategoriaDaComunidade
+                var categoriaDaComunidade = new Usuario
                 {
                     Categoria = categoria,
                     Comunidade = comunidade
@@ -148,7 +148,7 @@ namespace ichan.Test
                 categoria = db.Categorias.FirstOrDefault(u => u.Id == 2);
                 comunidade = db.Comunidades.FirstOrDefault(u => u.Id == 2);
 
-                categoriaDaComunidade = new CategoriaDaComunidade
+                categoriaDaComunidade = new Usuario
                 {
                     Categoria = categoria,
                     Comunidade = comunidade
@@ -169,7 +169,7 @@ namespace ichan.Test
                 var post = new Post
                 {
                     Titulo = "Zerei Dark Souls",
-                    Conteudo = "O Jogo é muito desafiante mas trouxe diversao no mundo sombrio, LOUVE O SOL!",
+                    Texto = "O Jogo é muito desafiante mas trouxe diversao no mundo sombrio, LOUVE O SOL!",
                     DataPost = DateTime.Today,
                     Usuario = usuario,
                     Comunidade = comunidade
@@ -182,7 +182,7 @@ namespace ichan.Test
                 post = new Post
                 {
                     Titulo = "Finalmente aconteceu",
-                    Conteudo = "finalmente cheguei na cena do urso do baldurs gate, me surpreendeu e fiquei em choq",
+                    Texto = "finalmente cheguei na cena do urso do baldurs gate, me surpreendeu e fiquei em choq",
                     DataPost = DateTime.Today,
                     Usuario = usuario,
                     Comunidade = comunidade
