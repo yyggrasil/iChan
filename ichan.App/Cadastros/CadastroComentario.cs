@@ -13,7 +13,7 @@ namespace ichan.App.Cadastros
         private readonly IBaseService<Comentario> _comentarioService;
         private readonly IBaseService<Usuario> _usuarioService;
         private readonly IBaseService<Post> _postService;
-        public CadastroComentario(  IBaseService<Comentario> comentarioService,
+        public CadastroComentario(IBaseService<Comentario> comentarioService,
                                     IBaseService<Usuario> usuarioService,
                                     IBaseService<Post> postService)
         {
