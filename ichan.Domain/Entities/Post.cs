@@ -9,14 +9,14 @@ namespace ichan.Domain.Entities
         {
             Id = id;
             Titulo = titulo;
-            Descricao = descricao;
+            Conteudo = descricao;
             DataPost = dataPost;
             Comunidade = comunidade;
             Usuario = usuario;
         }
 
         public string Titulo { get; set; }
-        public string? Descricao { get; set; }
+        public string? Conteudo { get; set; }
         public DateTime DataPost { get; set; }
 
         public virtual Comunidade Comunidade { get; set; }

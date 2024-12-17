@@ -16,7 +16,7 @@ namespace ichan.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(45)");
 
-            builder.Property(x => x.Descricao)
+            builder.Property(x => x.Conteudo)
                 .HasColumnType("varchar(255)");
 
             builder.Property(x => x.DataPost)

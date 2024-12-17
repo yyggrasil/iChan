@@ -81,6 +81,10 @@ namespace ichan.App.Base
                 {
                     ((MaterialMaskedTextBox)control).Clear();
                 }
+                if (control is MaterialMultiLineTextBoxEdit)
+                {
+                    ((MaterialMultiLineTextBoxEdit)control).Clear();
+                }
             }
         }
 

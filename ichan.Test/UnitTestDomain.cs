@@ -105,7 +105,7 @@ namespace ichan.Test
             Debug.WriteLine(JsonSerializer.Serialize(posts));
 
             Assert.AreEqual(posts.Titulo, "Jogo ruim");
-            Assert.AreEqual(posts.Descricao, "jogo é pay to win");
+            Assert.AreEqual(posts.Conteudo, "jogo é pay to win");
             Assert.AreEqual(posts.DataPost, DateTime.Today);
 
         }

@@ -16,7 +16,7 @@ namespace ichan.Service.Validators
                 .NotEmpty().WithMessage("O título do post é obrigatório.")
                 .MaximumLength(45).WithMessage("O título pode ter no máximo 45 caracteres.");
 
-            RuleFor(p => p.Descricao)
+            RuleFor(p => p.Conteudo)
                 .MaximumLength(255).WithMessage("A descrição pode ter no máximo 255 caracteres.");
 
             RuleFor(p => p.DataPost)

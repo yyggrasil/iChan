@@ -169,7 +169,7 @@ namespace ichan.Test
                 var post = new Post
                 {
                     Titulo = "Zerei Dark Souls",
-                    Descricao = "O Jogo é muito desafiante mas trouxe diversao no mundo sombrio, LOUVE O SOL!",
+                    Conteudo = "O Jogo é muito desafiante mas trouxe diversao no mundo sombrio, LOUVE O SOL!",
                     DataPost = DateTime.Today,
                     Usuario = usuario,
                     Comunidade = comunidade
@@ -182,7 +182,7 @@ namespace ichan.Test
                 post = new Post
                 {
                     Titulo = "Finalmente aconteceu",
-                    Descricao = "finalmente cheguei na cena do urso do baldurs gate, me surpreendeu e fiquei em choq",
+                    Conteudo = "finalmente cheguei na cena do urso do baldurs gate, me surpreendeu e fiquei em choq",
                     DataPost = DateTime.Today,
                     Usuario = usuario,
                     Comunidade = comunidade

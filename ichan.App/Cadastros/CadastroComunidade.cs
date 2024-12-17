@@ -10,13 +10,14 @@ namespace ichan.App.Cadastros
     {
         private List<ComunidadeModel> comunidades;
 
-        private readonly IBaseService<Comentario> _comunidadeService;
+        private readonly IBaseService<Comunidade> _comunidadeService;
 
-        public CadastroComunidade(IBaseService<Comentario> comunidadeService)
+        public CadastroComunidade(IBaseService<Comunidade> comunidadeService)
         {
             _comunidadeService = comunidadeService;
             comunidades = new List<ComunidadeModel>();
             InitializeComponent();
+            Novo();
         }
         private void PreencheObjeto(Comunidade comunidade)
         {
@@ -54,6 +55,37 @@ namespace ichan.App.Cadastros
             {
                 MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        protected override void Deletar(int id)
+        {
+            try
+            {
+                _comunidadeService.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        protected override void CarregaGrid()
+        {
+            comunidades = _comunidadeService.Get<ComunidadeModel>(false).ToList();
+            dataGridViewConsulta.DataSource = comunidades;
+            dataGridViewConsulta.AutoResizeColumns();
+        }
+        protected override void CarregaRegistro(DataGridViewRow? linha)
+        {
+            txtId.Text = linha?.Cells["Id"].Value.ToString();
+            txtData.Text = DateTime.TryParse(linha?.Cells["DataCriacao"].Value.ToString(), out var dataC)
+               ? dataC.ToString("g")
+               : "";
+            txtDescricao.Text = linha?.Cells["Descricao"].Value.ToString();
+
+        }
+        protected override void Novo()
+        {
+            base.Novo();
+            txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
     }
 }
