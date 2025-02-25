@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using ichan.Domain.Base;
-using Microsoft.Extensions.Options;
 
 namespace ichan.Service.Services
 {

@@ -1,6 +1,4 @@
-﻿using ichan.Domain.Base;
-
-namespace ichan.App.Models
+﻿namespace ichan.App.Models
 {
     public class UsuarioModel
     {
@@ -21,8 +19,8 @@ namespace ichan.App.Models
         #endregion
 
         #region Relacionamentos
-        public List<PostModel> posts { get; set; } 
-        public List<SegueModel> seguir { get; set; } 
+        public List<PostModel> posts { get; set; }
+        public List<SegueModel> seguir { get; set; }
         public List<ComentarioModel> comentarios { get; set; }
 
         #endregion

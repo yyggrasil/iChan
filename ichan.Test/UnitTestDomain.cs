@@ -48,7 +48,7 @@ namespace ichan.Test
             Categoria categoria = new Categoria();
             Comunidade comunidade = new Comunidade();
             CategoriaDaComunidade categoriaDaComunidade = new CategoriaDaComunidade(1, categoria, comunidade);
-            
+
             Debug.WriteLine(JsonSerializer.Serialize(categoriaDaComunidade));
 
             Assert.IsNotNull(categoriaDaComunidade);

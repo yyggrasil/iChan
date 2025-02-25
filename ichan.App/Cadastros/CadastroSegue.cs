@@ -3,16 +3,6 @@ using ichan.App.Models;
 using ichan.Domain.Base;
 using ichan.Domain.Entities;
 using ichan.Service.Validators;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace ichan.App.Cadastros
 {
@@ -23,7 +13,7 @@ namespace ichan.App.Cadastros
         private readonly IBaseService<Usuario> _usuarioService;
         private readonly IBaseService<Comunidade> _comunidadeService;
 
-        public CadastroSegue(   IBaseService<Segue> segueService,
+        public CadastroSegue(IBaseService<Segue> segueService,
                                 IBaseService<Usuario> usuarioService,
                                 IBaseService<Comunidade> comunidadeService)
         {

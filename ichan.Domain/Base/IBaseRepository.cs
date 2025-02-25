@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ichan.Domain.Base
+﻿namespace ichan.Domain.Base
 {
-    public interface IBaseRepository<TEntity> 
+    public interface IBaseRepository<TEntity>
         where TEntity : IBaseEntity
     {
         void ClearChangeTracker();

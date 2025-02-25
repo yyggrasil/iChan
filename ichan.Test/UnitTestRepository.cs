@@ -1,7 +1,5 @@
 ﻿using ichan.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Policy;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ichan.Test
 {

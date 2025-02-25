@@ -13,7 +13,7 @@ namespace ichan.App.Cadastros
         private IBaseService<Post> _postService;
         private IBaseService<Usuario> _usuarioService;
         private IBaseService<Comunidade> _comunidadeService;
-        public CadastroPost(    IBaseService<Post> postService,
+        public CadastroPost(IBaseService<Post> postService,
                                 IBaseService<Usuario> usuarioService,
                                 IBaseService<Comunidade> comunidadeService)
         {

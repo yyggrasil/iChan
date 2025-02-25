@@ -1,16 +1,11 @@
 ﻿using FluentValidation;
 using ichan.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ichan.Service.Validators
 {
     public class UsuarioValidator : AbstractValidator<Usuario>
     {
-        public UsuarioValidator() 
+        public UsuarioValidator()
         {
             RuleFor(u => u.Email)
                 .NotEmpty().WithMessage("O e-mail é obrigatório.")

@@ -2,7 +2,6 @@
 using ichan.Domain.Entities;
 using ichan.Service.Validators;
 using ReaLTaiizor.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ichan.App.Outros
 {

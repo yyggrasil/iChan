@@ -7,17 +7,12 @@ using ichan.Service.Services;
 using ichan.Service.Validators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace ichan.Test
 {
     [TestClass]
-    public class UnitTestService ()
+    public class UnitTestService()
     {
 
         private ServiceCollection? services;

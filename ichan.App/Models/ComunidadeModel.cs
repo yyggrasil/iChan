@@ -1,6 +1,4 @@
-﻿using ichan.Domain.Base;
-
-namespace ichan.App.Models
+﻿namespace ichan.App.Models
 {
     public class ComunidadeModel
     {

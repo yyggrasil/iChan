@@ -1,6 +1,4 @@
-﻿using ichan.Domain.Base;
-
-namespace ichan.App.Models
+﻿namespace ichan.App.Models
 {
     public class PostModel
     {
@@ -15,7 +13,7 @@ namespace ichan.App.Models
         public DateTime DataPost { get; set; }
 
         public int IdComunidade { get; set; }
-        public string? Comunidade {  get; set; }
+        public string? Comunidade { get; set; }
         public int IdUsuario { get; set; }
         public string? Usuario { get; set; }
         public List<ComentarioModel> Comentarios { get; set; } = [];

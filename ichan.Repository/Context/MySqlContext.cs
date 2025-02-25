@@ -6,16 +6,16 @@ namespace ichan.Repository.Context
 {
     public class MySqlContext : DbContext
     {
-        public MySqlContext(DbContextOptions<MySqlContext> options) 
+        public MySqlContext(DbContextOptions<MySqlContext> options)
             : base(options)
         {
-            Database.EnsureCreated();        
+            Database.EnsureCreated();
         }
         //public DbSet<Amizade> Amizades { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<CategoriaDaComunidade> CategoriaDaComunidades { get; set; }
-        public DbSet<Comentario> Comentarios{ get; set; }
-        public DbSet<Comunidade> Comunidades{ get; set; }
+        public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet<Comunidade> Comunidades { get; set; }
         public DbSet<Segue> Seguidas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Post> Posts { get; set; }

@@ -1,10 +1,8 @@
-﻿using ichan.Domain.Base;
-
-namespace ichan.App.Models
+﻿namespace ichan.App.Models
 {
     public class CategoriaModel
     {
-        public CategoriaModel() 
+        public CategoriaModel()
         {
             categoriaDaComunidades = new List<CategoriaDaComunidadeModel>();
         }

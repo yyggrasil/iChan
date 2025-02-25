@@ -50,7 +50,7 @@ namespace ichan.App.Cadastros
             }
         }
 
-        protected override void Deletar(int id) 
+        protected override void Deletar(int id)
         {
             try
             {

@@ -1,14 +1,14 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using ichan.Service.Services;
-using ichan.Repository.Context;
-using AutoMapper;
-using ichan.Domain.Base;
-using ichan.Domain.Entities;
-using ichan.Repository.Repository;
+﻿using AutoMapper;
 using ichan.App.Cadastros;
 using ichan.App.Models;
 using ichan.App.Outros;
+using ichan.Domain.Base;
+using ichan.Domain.Entities;
+using ichan.Repository.Context;
+using ichan.Repository.Repository;
+using ichan.Service.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ichan.App.Infra
 {
@@ -20,7 +20,7 @@ namespace ichan.App.Infra
         public static void ConfigureServices()
         {
             Services = new ServiceCollection();
-            
+
             #region Banco de dados
             // Configura Banco na Injeção de dependencia
             var strCon = File.ReadAllText("Config/ConfigBanco.txt");
@@ -77,8 +77,8 @@ namespace ichan.App.Infra
                 config.CreateMap<Post, PostModel>()
                     .ForMember(d => d.IdComunidade, d => d.MapFrom(x => x.Comunidade!.Id))
                     .ForMember(d => d.Comunidade, d => d.MapFrom(x => x.Comunidade!.Nome))
-                    .ForMember(d=>d.IdUsuario, d=> d.MapFrom(x => x.Usuario!.Id))
-                    .ForMember(d=>d.Usuario, d => d.MapFrom(x => x.Usuario!.Nome));
+                    .ForMember(d => d.IdUsuario, d => d.MapFrom(x => x.Usuario!.Id))
+                    .ForMember(d => d.Usuario, d => d.MapFrom(x => x.Usuario!.Nome));
                 config.CreateMap<CategoriaDaComunidade, CategoriaDaComunidadeModel>()
                     .ForMember(d => d.IdCategoria, d => d.MapFrom(x => x.Categoria!.Id))
                     .ForMember(d => d.Categoria, d => d.MapFrom(x => x.Categoria!.Nome))

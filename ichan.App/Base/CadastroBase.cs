@@ -88,9 +88,7 @@ namespace ichan.App.Base
             }
         }
 
-        protected virtual void CarregaGrid()
-        {
-        }
+        protected virtual void CarregaGrid() { }
 
         protected virtual void Novo()
         {
@@ -99,10 +97,7 @@ namespace ichan.App.Base
             tabControlCadastro.Focus();
         }
 
-        protected virtual void Salvar()
-        {
-
-        }
+        protected virtual void Salvar() { }
 
         protected virtual void Editar()
         {
@@ -120,20 +115,11 @@ namespace ichan.App.Base
             }
         }
 
-        protected virtual void Deletar(int id)
-        {
+        protected virtual void Deletar(int id) { }
 
-        }
-
-        protected virtual void CarregaRegistro(DataGridViewRow? linha)
-        {
-
-        }
+        protected virtual void CarregaRegistro(DataGridViewRow? linha) { }
 
         #endregion
-
-
-
 
     }
 }
