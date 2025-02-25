@@ -19,7 +19,7 @@ namespace ichan.App.Base
         #region Eventos form
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(@"Deseja realmente cancelar?", @"IFSP Store", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(@"Deseja realmente cancelar?", @"IChan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 LimpaCampos();
                 tabControlCadastro.SelectedIndex = 1;
