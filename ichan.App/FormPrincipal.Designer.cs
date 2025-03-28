@@ -42,6 +42,7 @@
             usuárioToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             lblUsuario = new ToolStripStatusLabel();
+            toolStripTextBox1 = new ToolStripTextBox();
             menuStrip.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -55,10 +56,10 @@
             // menuStrip
             // 
             menuStrip.ImageScalingSize = new Size(20, 20);
-            menuStrip.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, toolStripTextBox1 });
             menuStrip.Location = new Point(3, 64);
             menuStrip.Name = "menuStrip";
-            menuStrip.Size = new Size(794, 28);
+            menuStrip.Size = new Size(907, 31);
             menuStrip.TabIndex = 1;
             menuStrip.Text = "menuStrip1";
             // 
@@ -66,7 +67,7 @@
             // 
             cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriaToolStripMenuItem, categoriaDaComunidadeToolStripMenuItem, comentarioToolStripMenuItem, comunidadeToolStripMenuItem, postToolStripMenuItem, seguidorToolStripMenuItem, usuárioToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(88, 24);
+            cadastrosToolStripMenuItem.Size = new Size(88, 27);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // categoriaToolStripMenuItem
@@ -122,9 +123,9 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { lblUsuario });
-            statusStrip1.Location = new Point(3, 421);
+            statusStrip1.Location = new Point(3, 575);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(794, 26);
+            statusStrip1.Size = new Size(907, 26);
             statusStrip1.TabIndex = 3;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -134,12 +135,18 @@
             lblUsuario.Size = new Size(66, 20);
             lblUsuario.Text = "Usuario: ";
             // 
+            // toolStripTextBox1
+            // 
+            toolStripTextBox1.Name = "toolStripTextBox1";
+            toolStripTextBox1.Size = new Size(100, 27);
+            toolStripTextBox1.Text = "Bem Vindo: ";
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(913, 604);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip);
             IsMdiContainer = true;
@@ -171,5 +178,6 @@
         private ToolStripMenuItem usuárioToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblUsuario;
+        private ToolStripTextBox toolStripTextBox1;
     }
 }

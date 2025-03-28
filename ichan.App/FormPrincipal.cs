@@ -26,7 +26,7 @@ namespace ichan.App
                 }
                 else
                 {
-                    lblUsuario.Text = $"Usuário: {usuario.Nome}";
+                    lblUsuario.Text = $"{usuario.Nome} \n{usuario.Email}";
                 }
             }
         }

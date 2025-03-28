@@ -9,6 +9,7 @@ namespace ichan.App.Cadastros
     {
         private IBaseService<Categoria> _categoriaService;
         private List<Categoria> categorias;
+
         public CadastroCategoria(IBaseService<Categoria> categoriaService)
         {
             _categoriaService = categoriaService;

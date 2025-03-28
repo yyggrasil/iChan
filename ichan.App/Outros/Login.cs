@@ -59,5 +59,20 @@ namespace ichan.App.Outros
         {
             Environment.Exit(0);
         }
+
+        private void linkCadastro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TabControlLogin.SelectedIndex = 1;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TabControlLogin.SelectedIndex = 0;
+        }
+
+        private void BtnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

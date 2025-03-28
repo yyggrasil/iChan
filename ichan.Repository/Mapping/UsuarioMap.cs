@@ -15,7 +15,7 @@ namespace ichan.Repository.Mapping
             builder.Property(x => x.Email)
                 .HasColumnType("varchar(45)")
                 .IsRequired()
-                .HasColumnName("DataInicio");
+                .HasColumnName("Email");
 
             builder.Property(x => x.Bios)
                 .HasColumnType("varchar(255)");
